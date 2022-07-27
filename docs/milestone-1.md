@@ -35,15 +35,27 @@ It displays the clock, a productivity timer, current song playing, and goals for
 
 ## Functionality
 
-1. **Clock**: Has a clock display for the local time. (Possible time zone feature)
+1. **Clock**: Has a clock display for the local time. Should have additional features such as switching formats, and timezones.
 2. **Weather**: Has the local weather, updated often. 
 3. **Study timer**: A productivity feature similar to [Pomodoro](https://pomofocus.io/).
 4. **Task**: Editable list of tasks to complete for the day.
+5. **Notes**: Editable list of notes.
 <!--  -->
 ***[Additional features:]***
 <!--  -->
-5. **Spotify Player**: A Spotify media player built around the app's theme ([video](https://www.youtube.com/watch?v=EqisCZG9MAc)).
-6. **Productivity functionality**: *[expand/edit this]*
+5. **Spotify Player**: A Spotify media player built around the app's theme ([yt](https://www.youtube.com/watch?v=EqisCZG9MAc),[blog](https://jmperezperez.medium.com/playing-with-the-spotify-connect-api-f5c8cb62a849)).
+6. **Extra functionality**: *[expand/edit this]*
 
 *[TODO 5 : expand/edit the above]*
 <!-- TODO 5 : ^^^ Update functionality ^^^ -->
+
+
+## **Rough Screens**
+
+### **Anshul**
+1. Home Screen
+![Anshul's Home Screen](../resources/Home%20Screen.png)
+2. Idle Screen
+![Anshul's Idle Screen](../resources/Idle%20Screen.png)
+### **Felicia**
+![Felicia's Screen](../resources/spotify.png)
