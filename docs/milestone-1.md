@@ -42,7 +42,7 @@ It displays the clock, a productivity timer, current song playing, and goals for
 <!--  -->
 ***[Additional features:]***
 <!--  -->
-5. **Media Player**: A Youtube/Spotify media player built around the app's theme.
+5. **Spotify Player**: A Spotify media player built around the app's theme ([video](https://www.youtube.com/watch?v=EqisCZG9MAc)).
 6. **Productivity functionality**: *[expand/edit this]*
 
 *[TODO 5 : expand/edit the above]*
