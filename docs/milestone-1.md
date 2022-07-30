@@ -3,12 +3,8 @@
 
 ## **Team Overview**  
 
-**Anshul Vemulapalli**  
-Github: x3z3  
-[avemulapalli@umass.edu](avemulapalli@umass.edu)  
-**Felicia DiPietro**  
-GitHub: feliciadipi  
-[fdipietro@umass.edu](fdipietro@umass.edu)
+Anshul Vemulapalli: `x3z3`  
+Felicia DiPietro: `feliciadipi`  
 
 ## **Application Idea**
 
@@ -28,8 +24,8 @@ We think this took could help meet the needs of students, people who work from h
 3. **Study timer**: A productivity feature similar to [Pomodoro](https://pomofocus.io/).
 4. **Task**: Editable list of tasks to complete for the day.
 5. **Notes**: Editable list of notes.
-6. **Spotify Player**: A Spotify media player built around the app's theme ([yt](https://www.youtube.com/watch?v=EqisCZG9MAc),[blog](https://jmperezperez.medium.com/playing-with-the-spotify-connect-api-f5c8cb62a849)).
-**
+6. **Spotify Player**: A Spotify media player built around the app's theme ([yt](https://www.youtube.com/watch?v=EqisCZG9MAc), [blog](https://jmperezperez.medium.com/playing-with-the-spotify-connect-api-f5c8cb62a849)).
+
 ## **Initial Designs**
 Home Screen  
 ![Anshul's Home Screen](../resources/Home%20Screen.png)
