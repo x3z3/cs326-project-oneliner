@@ -14,7 +14,7 @@ body {
 .page-container {
     display: grid;
     grid-template-columns: 31.25% 37.5% 31.25%;
-    grid-template-rows: 16.66% auto 16.68% 16.66%;
+    grid-template-rows: 16.66% auto 15% 16.66%;
 }
 
 .block-theme {
@@ -50,6 +50,9 @@ body {
 .block-spotify {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
+    display: flex;
+    align-items: top;
+    justify-content: center;
 }
 
 .block-btn1 {
