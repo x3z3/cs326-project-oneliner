@@ -1,98 +1,142 @@
+/* General Page theme */
 body {
     margin: 0;
     padding: 0;
     /* font-family: ''; */
 }
-
 .page-theme {
     width: 100vw;
     height: 100vh;
     background-color: #211D1E;
     color: white;
 }
-
 .page-container {
     display: grid;
     grid-template-columns: 31.25% 37.5% 31.25%;
     grid-template-rows: 16.66% auto 15% 16.66%;
 }
+.std-rounded-btn {
+    font-size: 20px;
+    border-radius: 40px;
+    padding: 10px 20px;
+    background-color: #7C7C7C;
+    color: #211D1E;
+    border: none;
+    text-align: center; 
+}
+.std-rounded-btn:hover {
+    background-color: #FFFFFF;
+}
 
+
+/* Theme button */
 .block-theme {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
 
+
+/* Pomodoro Button */
 .block-pomodoro {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
+.pomodoro-btn {
+    display: flex;  
+    margin-top: 3%;
+}
 
+
+/* Weather Button*/
 .block-weather {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
 }
 
-.block-notes {
-    grid-column: 1 / 2;
-    grid-row: 2 / 4;
-}
 
+/* clock */
 .block-clock {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+    justify-content: center;
+}
+.clock-time {
+    display: flex;
+    font-size: 8rem;
+    font-weight: bold;
+    justify-content: center;
+}
+.clock-day {
+    display: flex;
+    font-size: 1.2rem;
+    /* font-weight: bold; */
+    justify-content: center;
+    align-items: center;
+}
+.clock-date {
+    display: flex;
+    font-size: 1.1rem;
+    justify-content: center;
+    align-items: center;
+    color: #7C7C7C;
 }
 
+
+/* Generic Text Blocks */
+.text-title {
+
+}
+.text-seperator {
+
+}
+.text-data {
+
+}
+
+
+/* Notes */
+.block-notes {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}        
+
+
+/* Tasks */
 .block-tasks {
     grid-column: 3 / 4;
     grid-row: 2 / 4;
-}
+}    
 
+
+/* Spotify Block - More in styles/spotify.css */
 .block-spotify {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
     display: flex;
     align-items: top;
     justify-content: center;
-}
+}    
 
+
+/* Button 1 */
 .block-btn1 {
     grid-column: 1 / 2;
     grid-row: 4 / 5;
-}
+}    
 
+
+/* Quote Area */
 .block-quote {
     grid-column: 2 / 3;
     grid-row: 4 / 5;
-}
+}    
 
+
+/* Button 2 */
 .block-btn2 {
     grid-column: 3 / 4;
-    grid-row: 4 / 5;
-}
-
-.center-horizontal {
-    display: flex;
-    justify-content: center;
-}
-
-.pomodoro-btn {
-    display: flex;  
-    margin-top: 3%;
-}
-
-.std-btn-theme {
-    background-color: #7C7C7C;
-    color: #211D1E;
-    border: none;
-    text-align: center; 
-}
-
-.rounded-btn {
-    font-size: 20px;
-    border-radius: 40px;
-    padding: 10px 20px;
-}
-
-.rounded-btn:hover {
-    background-color: #FFFFFF;
+    grid-row: 4 / 5;    
 }

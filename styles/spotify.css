@@ -54,7 +54,7 @@
     height: 100%;
     
     background-color: #211D1E;
-    color: white;
+    color: transparent;
     border: none;
     text-align: center; 
     border-radius: 40px;
@@ -63,7 +63,6 @@
 .spotify-btn:hover {
     background-color: #7C7C7C;
     color: white;
-    border: white;
 }
 
 .spotify-track {
