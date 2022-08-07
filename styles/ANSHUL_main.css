@@ -4,20 +4,17 @@ body {
     padding: 0;
     /* font-family: ''; */
 }
-
 .test-container {
     background-color: salmon;
     width: 50vw;
     height: 50vh;
 }
-
 .page-theme {
     width: 100vw;
     height: 100vh;
     background-color: #211D1E;
     color: white;
 }
-
 .page-container {
     display: grid;
     grid-template-columns: 31.25% 37.5% 31.25%;
@@ -30,7 +27,6 @@ body {
     grid-row: 1 / 2;
     display: flex;
 }
-
 .theme-button {
     height: 35px;
     width: 35px;
@@ -38,7 +34,6 @@ body {
     padding-top: 2.5%;
     display: flex;
 }
-
 .theme-outer-circ {
     height: 100%;
     width: 100%;
@@ -48,11 +43,9 @@ body {
     justify-content: center;
     border-radius: 50%;
 }
-
 .theme-outer-circ:hover {
     background-color: white;
 }
-
 .theme-inner-circ {
     align-items: center;
     justify-content: center;
@@ -62,42 +55,58 @@ body {
     background-color: black;
 }
 
-/* 
-.theme-button-container:hover {
-    background-color: white;
-} */
-
-/* .theme-button {
+/* Weather Button*/
+.block-weather {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.weather-button {
+    display: flex;
+    height: 35px;
+    width: 120px;
+    margin-top: 2.5%;
+    margin-right: 5%;
+    border-radius: 40px;
+    border-color: #393939;
+    border-style: solid;
+    border-width: 4px;
+    background-color: black;
     justify-content: center;
     align-items: center;
-    margin-top: 10%;
-    margin-left: 10%;
-    height: 80%;
-    width: 80%;
+}
+.weather-button:hover {
+    border-color: white;
+}
+.weather-temp {
+    height: 30px;
+    width: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.weather-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.weather-icon {
+    height: 25px;
+    width: 25px;
     border-radius: 50%;
-
-    background-color: black;
-} */
+    background-color: white;
+}
 
 /* Pomodoro Button */
 .block-pomodoro {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
-
 .pomodoro-btn {
     display: flex;
     margin-top: 2.5%;
     justify-content: center;
 }
-
-
-/* Weather Button*/
-.block-weather {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-}
-
 
 /* clock */
 .block-clock {
@@ -108,14 +117,12 @@ body {
     align-items: top;
     justify-content: center;
 }
-
 .clock-time {
     display: flex;
     font-size: 8rem;
     font-weight: bold;
     justify-content: center;
 }
-
 .clock-day {
     display: flex;
     font-size: 1.2rem;
@@ -123,7 +130,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .clock-date {
     display: flex;
     font-size: 1.1rem;
@@ -132,25 +138,22 @@ body {
     color: #7C7C7C;
 }
 
+/* Generic Text Blocks */
 .top-text-margin {
     height: 25%;
     width: 100%;
 }
-
 .block-text {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-/* Generic Text Blocks */
 .text-title {
     display: flex;
     justify-content: center;
     font-size: 1.5rem;
     font-weight: bold;
 }
-
 .text-seperator {
     display: flex;
     justify-content: center;
@@ -161,7 +164,6 @@ body {
     margin-top: 2%;
     margin-bottom: 2%;
 }
-
 .text-data {
     text-align: left;
     margin-left: 15%;
@@ -170,20 +172,17 @@ body {
     color: #7C7C7C;
 }
 
-
 /* Notes */
 .block-notes {
     grid-column: 1 / 2;
     grid-row: 2 / 4;
 }
 
-
 /* Tasks */
 .block-tasks {
     grid-column: 3 / 4;
     grid-row: 2 / 4;
 }
-
 
 /* Spotify Block - More in styles/spotify.css */
 .block-spotify {
@@ -194,7 +193,6 @@ body {
     justify-content: center;
 }
 
-
 /* Button 1 */
 .block-btn1 {
     grid-column: 1 / 2;
@@ -202,7 +200,6 @@ body {
     margin-left: 3%;
     margin-top: 6%;
 }
-
 
 /* Quote Area */
 .block-quote {
@@ -215,7 +212,6 @@ body {
     font-size: 20px;
     color: #393939;
 }
-
 
 /* Button 2 */
 .block-btn2 {
