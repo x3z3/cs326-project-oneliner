@@ -1,8 +1,10 @@
-import { getDate } from "./ANSHUL_date.js";
 import { renderClock } from "./ANSHUL_render.js";
+import { getDate } from "./date.js";
+
+const clockContainer = document.getElementById('clock-container');
 
 function render() {
-    renderClock(getDate());
+    renderClock(clockContainer, getDate());
 }
 
 function updateTime() {

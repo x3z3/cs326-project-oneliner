@@ -1,3 +1,6 @@
+// Returns a date object with the current time
+// {hour: number, minute: string, dayOfWeek: string, month: string, date: string, year: number}
+// Example: {hour: '07', minute: '00', dayOfWeek: "Monday", month: "January", date: "1st", year: 2020}
 function getDate() {
     const time = new Date();
     const hour = time.getHours();
@@ -8,8 +11,8 @@ function getDate() {
     const dayOfWeek = time.getDay();
 
     return {
-        hour: hour,
-        minute: minute,
+        hour: ('00' + hour).slice(-2),
+        minute: ('00' + minute).slice(-2),
         month: month_map[month],
         date: date_suffix(date),
         year: year,
