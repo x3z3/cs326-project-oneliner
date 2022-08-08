@@ -1,13 +1,13 @@
 import { getDate } from "./ANSHUL_date.js";
+import { renderClock } from "./ANSHUL_render.js";
 
-function updateTime() {
-    const dateObj = getDate();
-    const time = document.getElementById("clock-time");
-    const date = document.getElementById("clock-date");
-    const day = document.getElementById("clock-day");
-    time.innerHTML = dateObj.hour + ":" + dateObj.minute;
-    date.innerHTML = dateObj.month + " " + dateObj.date + " " + dateObj.year;
-    day.innerHTML = dateObj.dayOfWeek;
+function render() {
+    renderClock(getDate());
 }
 
-updateTime();
+function updateTime() {
+    const timeObj = getDate();
+    renderClock(timeObj);
+}
+
+render();
