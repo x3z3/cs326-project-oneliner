@@ -1,15 +1,16 @@
-import { renderClock } from "./VEMULAPALLI_render.js";
+import { renderClock, renderSpotify } from "./VEMULAPALLI_render.js";
 import { getDate } from "./date.js";
 
 const clockContainer = document.getElementById('clock-container');
+const spotifyContainer = document.getElementById('spotify-container');
 
 function render() {
-    renderClock(clockContainer, getDate());
+    startClock();
+    renderSpotify(spotifyContainer, null);
 }
 
-function updateTime() {
-    const timeObj = getDate();
-    renderClock(timeObj);
+function startClock() {
+    setInterval(renderClock(clockContainer, getDate()),1000);
 }
 
 render();
