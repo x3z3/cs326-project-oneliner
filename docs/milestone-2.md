@@ -2,7 +2,7 @@
 
 ## **Functionality and Interactions**
 
-1. **Clock**: Has a clock display for the local time. *Can be toggleable to switch between 12 hour and 24 hour clocks. Mode is stored in local storage.*
+1. **Clock**: Has a clock display for the local time. *Can be toggled to switch between 12 hour and 24 hour clocks. Mode is stored in local storage.*
 
 2. **Weather:** Has the local weather, updated often. *Can be toggled to switch between locations. Weather data is stored in the database to avoid unncessary duplicate API calls.*
 
@@ -16,9 +16,8 @@
 
 7. **Theme:** A toggle button to change the themes of the website. *Clicking the theme button will switch the entire theme of the page, between dark mode, or light mode.*
 
-8. **Quote:** A daily motivation quote from [zenquotes](https://zenquotes.io/). *A daily motivation quote from zenquotes. Quote is cached in local storage to avoid multiple api calls.*
+8. **Quote:** A daily motivational quote from [zenquotes](https://zenquotes.io/). *A daily motivation quote from zenquotes. Quote is cached in local storage to avoid multiple api calls.*
 
 9. **Screens Mode:** A toggleable screens mode which has different components rendered. *Minimalist mode to display minimum functionality on a screen.*
 
 10. **History:** A button to browse through the history of tasks and notes, which can be deleted. *A button to fetch a list of past tasks from the database based on IP address.*
-
