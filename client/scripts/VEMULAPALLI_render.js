@@ -35,7 +35,7 @@ function renderSpotify(element, songData) {
     leftContainer.appendChild(imgSlot1);
     // Spotify img
     const spotifyImg = document.createElement('img');
-    spotifyImg.src = 'resources/white_spotify.png';
+    spotifyImg.src = 'client_resources/white_spotify.png';
     spotifyImg.classList.add('img-circ');
     imgSlot1.appendChild(spotifyImg);
 
@@ -98,7 +98,7 @@ function renderSpotify(element, songData) {
     rightContainer.appendChild(imgSlot2);
     // Album img
     const spotifyAlbum = document.createElement('img');
-    spotifyAlbum.src = 'resources/album.jpg';
+    spotifyAlbum.src = 'client_resources/album.jpg';
     spotifyAlbum.classList.add('img-circ');
     imgSlot2.appendChild(spotifyAlbum);
 
