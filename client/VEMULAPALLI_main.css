@@ -62,7 +62,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
 }
-.weather-button {
+.weather-container {
     display: flex;
     height: 35px;
     width: 120px;
@@ -76,7 +76,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.weather-button:hover {
+.weather-container:hover {
     border-color: white;
 }
 .weather-temp {

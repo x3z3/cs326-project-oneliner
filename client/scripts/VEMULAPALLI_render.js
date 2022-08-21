@@ -116,8 +116,39 @@ function renderQuote(element, quote) {
     element.innerHTML = html;
 }
 
+function renderWeather(element, weather, f_c) {
+    let temp = '';
+    if (f_c) {
+        temp = weather.temp + ' ' + weather.unit;
+    } else {
+        temp = Math.floor(((weather.temp-32)*5)/9) + ' ' + 'C';
+    }
+
+    element.innerHTML = '';
+    const weatherTemp = document.createElement('div');
+    weatherTemp.classList.add('weather-temp');
+
+    const weatherText = document.createElement('div');
+    weatherText.classList.add('weather-text');
+    weatherText.innerHTML = temp;
+
+    weatherTemp.appendChild(weatherText);
+
+    const weatherIcon = document.createElement('div');
+    weatherIcon.classList.add('weather-icon');
+
+    const weatherImg = document.createElement('img');
+    weatherImg.classList.add('img-circ');
+    weatherImg.src = weather.icon;
+    weatherIcon.appendChild(weatherImg)
+
+    element.appendChild(weatherTemp);
+    element.appendChild(weatherIcon);
+
+}
+
 function clearElement(element) {
     element.innerHTML = '';
 }
 
-export { renderClock, renderSpotify, renderQuote, clearElement };
+export { renderClock, renderSpotify, renderQuote, renderWeather, clearElement };
