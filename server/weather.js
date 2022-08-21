@@ -11,6 +11,16 @@ class Weather {
     async #fetchWeather() {
         const data = await fetch(this.url, {method:'GET'})
         const body = await data.json();
+        // if API is doesnt work
+        if (body.status === 500) {
+            this.weather = {
+                temp : NaN,
+                unit : null,
+                isDayTime : null,
+                icon : '../resources/sad.png',
+                endTime : null
+            }
+        }
         const weatherObj = body.properties.periods[0];
         this.weather = {
             temp : weatherObj.temperature,
