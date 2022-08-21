@@ -1,4 +1,3 @@
-import { captureRejectionSymbol } from 'events';
 import { readFile, writeFile } from 'fs/promises';
 
 class Jsonfs {
