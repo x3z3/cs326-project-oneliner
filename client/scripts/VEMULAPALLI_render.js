@@ -1,9 +1,14 @@
-function renderClock(element, timeObject) {
+function renderClock(element, timeObject, clock24format) {
     element.innerHTML = '';
     // Time
     const time = document.createElement('div');
     time.classList.add('clock-time');
-    time.innerHTML = timeObject.hour + ":" + timeObject.minute;
+    if (clock24format) {
+        time.innerHTML = timeObject.hour + ":" + timeObject.minute;
+    } else {
+        const suffix = timeObject/12 >= 1 ? 'PM' : 'AM';
+        time.innerHTML = timeObject.hour%12 + ":" + timeObject.minute + ' '  + suffix;
+    }
     element.appendChild(time);
     // Day
     const day = document.createElement('div');
