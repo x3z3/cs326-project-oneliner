@@ -29,4 +29,14 @@ app.get('/quote', async(req, res) => {
 
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
+    startTimers();
 })
+
+function startTimers() {
+    // Every hour
+    setInterval(async() => {
+        await weather.updateWeather();
+        await quote.updateQuote();
+        console.log('Updated');
+    }, 3600000);
+}
