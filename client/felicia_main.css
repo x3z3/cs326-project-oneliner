@@ -1,0 +1,16 @@
+body {
+  background-color: #6B7A8F;
+  color: #FFFF;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+}
+
+.page-container {
+  padding: 20%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.section {
+  text-align: center;
+}
