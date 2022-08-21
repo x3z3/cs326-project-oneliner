@@ -37,6 +37,5 @@ function startTimers() {
     setInterval(async() => {
         await weather.updateWeather();
         await quote.updateQuote();
-        console.log('Updated');
     }, 3600000);
 }
