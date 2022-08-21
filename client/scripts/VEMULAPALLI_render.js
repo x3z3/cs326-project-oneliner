@@ -1,4 +1,3 @@
-
 function renderClock(element, timeObject) {
     element.innerHTML = '';
     // Time
@@ -104,8 +103,16 @@ function renderSpotify(element, songData) {
 
 }
 
+function renderQuote(element, quote) {
+    let html = '';
+    html += quote.q;
+    html += ' -'
+    html += quote.a;
+    element.innerHTML = html;
+}
+
 function clearElement(element) {
     element.innerHTML = '';
 }
 
-export { renderClock, renderSpotify, clearElement };
+export { renderClock, renderSpotify, renderQuote, clearElement };
