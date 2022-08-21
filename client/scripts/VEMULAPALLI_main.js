@@ -16,10 +16,19 @@ async function render() {
     renderQuote(quoteContainer, await getQuote());
     renderWeather(weatherContainer, await getWeather(), f_c);
     startClock();
+    startFetchTimers();
 }
 
 function startClock() {
     setInterval(() => renderClock(clockContainer, getDate(), clock24Hour),1000);
+}
+
+function startFetchTimers() {
+    // Refreshes every 10 mins
+    setInterval(async () => {
+        renderQuote(quoteContainer, await getQuote());
+        renderWeather(weatherContainer, await getWeather(), f_c);
+    }, 600000);
 }
 
 clockContainer.addEventListener('click', () => {

@@ -21,6 +21,10 @@ class Weather {
         }
     }
 
+    async updateWeather() {
+        await this.#fetchWeather();
+    }
+
     async getWeather() {
         if (!this.weather) {
             await this.#fetchWeather();

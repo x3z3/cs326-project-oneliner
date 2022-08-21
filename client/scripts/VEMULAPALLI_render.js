@@ -6,8 +6,12 @@ function renderClock(element, timeObject, clock24format) {
     if (clock24format) {
         time.innerHTML = timeObject.hour + ":" + timeObject.minute;
     } else {
-        const suffix = timeObject/12 >= 1 ? 'PM' : 'AM';
-        time.innerHTML = timeObject.hour%12 + ":" + timeObject.minute + ' '  + suffix;
+        const suffix = timeObject.hour/12 >= 1 ? 'PM' : 'AM';
+        let hour = timeObject.hour%12;
+        if (hour === 0) {
+            hour = 12;
+        }
+        time.innerHTML = hour + ":" + timeObject.minute + ' '  + suffix;
     }
     element.appendChild(time);
     // Day
