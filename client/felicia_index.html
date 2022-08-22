@@ -7,10 +7,30 @@
   <link rel="stylesheet" href="felicia_main.css">
 </head>
 <body>
-  <div class="container">
-    <div class="section" class="left"></div>
-    <div class="section" class="center"></div>
-    <div class="section" class="right"></div>
+  <div class="page-container" id="page-container">
+
+    <div class="section" class="left">
+      <div class="notes-container">
+        <label for="notes-textbox">Notes</label>
+        <br>
+        <input type="text" class="textbox" id="notes-textbox">
+      </div>
+    </div>
+
+    <div class="section" class="center">
+      <div class="clock-container" id="clock-container"></div>
+      <div class="date-container" id="date-container"></div>
+      <button type="button" class="pomodoro-button">Pomodoro</button>
+    </div>
+
+    <div class="section" class="right">
+      <div class="tasks-container">
+        <label for="tasks-textbox">Tasks</label>
+        <br>
+        <input type="text" class="textbox" id="tasks-textbox">
+      </div>
+    </div>
+
   </div>
 </body>
 </html>

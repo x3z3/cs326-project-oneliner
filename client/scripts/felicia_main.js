@@ -1,10 +1,12 @@
-import { renderClock, renderWeather, renderTasks, renderNotes } from "./felicia_render.js";
+import { renderClock, renderDate, renderWeather, renderTasks, renderNotes } from "./felicia_render.js";
 
-const container = document.getElementById('container');
+const pageContainer = document.getElementById('page-container');
+const clockContainer = document.getElementById('clock-container');
+const dateContainer = document.getElementById('date-container');
 
-function render(element) {
-  const content = document.createElement('div');
-  element.appendChild(content);
+function render() {
+  renderClock(clockContainer);
+  renderDate(dateContainer);
 }
 
-render(container);
+render();

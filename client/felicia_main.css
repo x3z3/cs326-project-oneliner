@@ -2,15 +2,86 @@ body {
   background-color: #6B7A8F;
   color: #FFFF;
   font-family: 'Courier New', Courier, monospace;
-  font-size: large;
 }
 
 .page-container {
-  padding: 20%;
+  margin: 10%;
   display: grid;
   grid-template-columns: repeat(3, auto);
 }
 
 .section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  justify-items: space-evenly;
+}
+
+.notes-container {
+  margin-top: 15%;
+  font-size: large;
+}
+
+.tasks-container {
+  margin-top: 15%;
+  font-size: large;
+}
+
+.clock-container {
+  margin-top: 10%;
+  margin-bottom: 0;
+  font-size: xx-large;
+}
+
+.date-container {
+  margin-top: 0;
+  margin-bottom: 20%;
+  font-size: x-large;
+}
+
+.textbox {
+  margin-top: 5%;
+  width: 400px;
+  height: 200px;
+  box-shadow: none;
+  border-style: dashed;
+  background-color: #6B7A8F;
+  border-color: #445367;
+  border-width: 1px;
+  border-radius: 1%;
+  color: #d0d8e3;
+}
+
+.pomodoro-button {
+  align-items: center;
+  background-color: #445367;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: #323d4d 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#2a3544 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #d0d8e3;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: center;
+  transition: box-shadow .15s,transform .15s;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.pomodoro-button:hover {
+  transform: translateY(-2px);
+}
+
+.pomodoro-button:active {
+  transform: translateY(2px);
 }
