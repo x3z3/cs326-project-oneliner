@@ -27,7 +27,7 @@ class Weather {
                 temp : NaN,
                 unit : null,
                 isDayTime : null,
-                icon : '../resources/sad.png',
+                icon : '',
                 endTime : null
             }
         }        

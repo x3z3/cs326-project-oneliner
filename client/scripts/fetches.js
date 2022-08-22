@@ -29,4 +29,36 @@ async function getWeather() {
     return body;
 }
 
-export { getQuote, getWeather };
+async function postLogin(username, password) {
+    const route = '/login';
+    const response = await fetch(url+route, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password
+        })
+    });
+    const body = await response.json();
+    return body;
+}
+
+async function postRegister(username, password) {
+    const route = '/register';
+    const response = await fetch(url+route, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password
+        })
+    });
+    const body = await response.json();
+    return body;
+}
+
+export { getQuote, getWeather, postLogin, postRegister };

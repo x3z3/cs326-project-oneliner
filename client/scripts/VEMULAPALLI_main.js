@@ -1,6 +1,6 @@
-import { renderClock, renderSpotify, renderLogin, renderQuote, renderWeather } from "./VEMULAPALLI_render.js";
+import { renderClock, renderSpotify, renderHistButton, renderStoreButton, renderLogin, renderQuote, renderWeather } from "./VEMULAPALLI_render.js";
 import { getDate } from "./date.js";
-import { getQuote, getWeather } from "./fetches.js"
+import { getQuote, getWeather, postLogin, postRegister } from "./fetches.js"
 import { theme } from "./themes.js"
 
 const root = document.querySelector(':root');
@@ -10,9 +10,8 @@ const interactiveContainer = document.getElementById('interactive-container');
 const quoteContainer = document.getElementById('quote-container');
 const weatherContainer = document.getElementById('weather-container');
 const themeButton = document.getElementById('theme-button');
-const storeBtn = document.getElementById('store-button');
-const histBtn = document.getElementById('hist-button');
-const registerBtn = document.getElementById('register-btn');
+const storeBtn = document.getElementById('block-btn1');
+const histBtn = document.getElementById('block-btn2');
 
 let clock24Hour = true;
 let f_c = true;
@@ -23,15 +22,37 @@ async function renderLoginPage() {
     const loginBtn = document.getElementById('login-btn');
     const registerBtn = document.getElementById('register-btn');
     loginBtn.addEventListener('click', async () => {
-        renderSpotify(interactiveContainer, null);
+        const userInput = document.getElementById('user-input');
+        const passInput = document.getElementById('pass-input');
+        const resp = await postLogin(userInput.value, passInput.value);
+        if (resp.status === 'success') {
+            await renderUnlockedPage();
+        } else {
+            alert('Invalid credentials');
+            renderLogin(interactiveContainer);
+        }
     });
     registerBtn.addEventListener('click', async () => {
-        renderSpotify(interactiveContainer, null);
+        const userInput = document.getElementById('user-input');
+        const passInput = document.getElementById('pass-input');
+        const resp = await postRegister(userInput.value, passInput.value);
+        if (resp.status === 'success') {
+            await renderUnlockedPage();
+        } else {
+            alert('User already exists');
+            renderLogin(interactiveContainer);
+        }
     });
     renderQuote(quoteContainer, await getQuote());
     renderWeather(weatherContainer, await getWeather(), f_c);
     startClock();
     startFetchTimers();
+}
+
+async function renderUnlockedPage() {
+    renderSpotify(interactiveContainer, null);
+    renderHistButton(histBtn);
+    renderStoreButton(storeBtn);
 }
 
 function startClock() {
