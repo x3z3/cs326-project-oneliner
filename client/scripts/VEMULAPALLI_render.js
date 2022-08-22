@@ -122,10 +122,13 @@ function renderQuote(element, quote) {
 
 function renderWeather(element, weather, f_c) {
     let temp = '';
-    if (f_c) {
-        temp = weather.temp + ' ' + weather.unit;
-    } else {
-        temp = Math.floor(((weather.temp-32)*5)/9) + ' ' + 'C';
+    // If API is dead
+    if (weather.temp !== null) {
+        if (f_c) {
+            temp = weather.temp + ' ' + weather.unit;
+        } else {
+            temp = Math.floor(((weather.temp-32)*5)/9) + ' ' + 'C';
+        }
     }
 
     element.innerHTML = '';
