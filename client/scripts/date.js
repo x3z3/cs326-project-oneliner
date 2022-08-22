@@ -25,10 +25,10 @@ const date_suffix = function(date) {
         return date + "st";
     }
     if (date === 2 || date === 22) {
-        return day + "nd";
+        return date + "nd";
     }
     if (date === 3 || date === 23) {
-        return day + "rd";
+        return date + "rd";
     }
     return date + "th";
 }

@@ -154,8 +154,60 @@ function renderWeather(element, weather, f_c) {
 
 }
 
+function renderLogin(element) {
+    element.innerHTML = '';
+
+    const loginContainer = document.createElement('div');
+    loginContainer.classList.add('login-container');
+    element.appendChild(loginContainer);
+
+    const loginForm = document.createElement('div');
+    loginForm.classList.add('login-form');
+    loginContainer.appendChild(loginForm);
+
+    const loginInput1 = document.createElement('div');
+    loginInput1.classList.add('login-input');
+    loginContainer.appendChild(loginInput1);
+
+    const userInput = document.createElement('input');
+    userInput.type = 'text';
+    userInput.classList.add('text-box');
+    userInput.id = 'user-input';
+    userInput.placeholder = 'Username';
+    loginInput1.appendChild(userInput);
+
+    const loginInput2 = document.createElement('div');
+    loginInput2.classList.add('login-input');
+    loginContainer.appendChild(loginInput2);
+
+    const passInput = document.createElement('input');
+    passInput.type = 'password';
+    passInput.classList.add('text-box');
+    passInput.id = 'pass-input';
+    passInput.placeholder = 'Password';
+    loginInput2.appendChild(passInput);
+
+
+    const loginBtns = document.createElement('div');
+    loginBtns.classList.add('login-buttons');
+    loginContainer.appendChild(loginBtns);
+
+    const loginBtn = document.createElement('button');
+    loginBtn.classList.add('login-btn');
+    loginBtn.innerHTML = 'Login';
+    loginBtn.id = 'login-btn';
+    loginBtns.appendChild(loginBtn);
+
+    const registerBtn = document.createElement('button');
+    registerBtn.classList.add('login-btn');
+    registerBtn.innerHTML = 'Register';
+    registerBtn.id = 'register-btn';
+    loginBtns.appendChild(registerBtn);
+
+}
+
 function clearElement(element) {
     element.innerHTML = '';
 }
 
-export { renderClock, renderSpotify, renderQuote, renderWeather, clearElement };
+export { renderClock, renderSpotify, renderQuote, renderWeather, clearElement, renderLogin };

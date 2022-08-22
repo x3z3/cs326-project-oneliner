@@ -1,21 +1,33 @@
-import { renderClock, renderSpotify, renderQuote, renderWeather } from "./VEMULAPALLI_render.js";
+import { renderClock, renderSpotify, renderLogin, renderQuote, renderWeather } from "./VEMULAPALLI_render.js";
 import { getDate } from "./date.js";
 import { getQuote, getWeather } from "./fetches.js"
 import { theme } from "./themes.js"
 
+const root = document.querySelector(':root');
+
 const clockContainer = document.getElementById('clock-container');
-const spotifyContainer = document.getElementById('spotify-container');
+const interactiveContainer = document.getElementById('interactive-container');
 const quoteContainer = document.getElementById('quote-container');
 const weatherContainer = document.getElementById('weather-container');
 const themeButton = document.getElementById('theme-button');
-const root = document.querySelector(':root');
+const storeBtn = document.getElementById('store-button');
+const histBtn = document.getElementById('hist-button');
+const registerBtn = document.getElementById('register-btn');
 
 let clock24Hour = true;
 let f_c = true;
 
-async function render() {
+async function renderLoginPage() {
     renderClock(clockContainer, getDate(), clock24Hour);
-    renderSpotify(spotifyContainer, null);
+    renderLogin(interactiveContainer);
+    const loginBtn = document.getElementById('login-btn');
+    const registerBtn = document.getElementById('register-btn');
+    loginBtn.addEventListener('click', async () => {
+        renderSpotify(interactiveContainer, null);
+    });
+    registerBtn.addEventListener('click', async () => {
+        renderSpotify(interactiveContainer, null);
+    });
     renderQuote(quoteContainer, await getQuote());
     renderWeather(weatherContainer, await getWeather(), f_c);
     startClock();
@@ -48,4 +60,4 @@ themeButton.addEventListener('click', () => {
     theme.toggleTheme(root);
 });
 
-render();
+renderLoginPage();
