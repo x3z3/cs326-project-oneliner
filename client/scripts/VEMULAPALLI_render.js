@@ -146,7 +146,11 @@ function renderWeather(element, weather, f_c) {
 
     const weatherImg = document.createElement('img');
     weatherImg.classList.add('img-circ');
-    weatherImg.src = weather.icon;
+    if (weather.icon === '') {
+        weatherImg.src = 'client_resources/sad.png';
+    } else {
+        weatherImg.src = weather.icon;
+    }
     weatherIcon.appendChild(weatherImg)
 
     element.appendChild(weatherTemp);
@@ -156,6 +160,13 @@ function renderWeather(element, weather, f_c) {
 
 function renderLogin(element) {
     element.innerHTML = '';
+
+    // const form = document.createElement('form');
+    // form.classList.add('login-form');
+    // form.action = '/login';
+    // form.method = 'post';
+    // element.appendChild(form);
+
 
     const loginContainer = document.createElement('div');
     loginContainer.classList.add('login-container');
@@ -193,15 +204,19 @@ function renderLogin(element) {
     loginContainer.appendChild(loginBtns);
 
     const loginBtn = document.createElement('button');
+    // loginBtn.type = 'submit';
     loginBtn.classList.add('login-btn');
     loginBtn.innerHTML = 'Login';
     loginBtn.id = 'login-btn';
+    loginBtn.formAction = '/login';
     loginBtns.appendChild(loginBtn);
 
     const registerBtn = document.createElement('button');
+    // registerBtn.type = 'submit';
     registerBtn.classList.add('login-btn');
     registerBtn.innerHTML = 'Register';
     registerBtn.id = 'register-btn';
+    registerBtn.formAction = '/register';
     loginBtns.appendChild(registerBtn);
 
 }
