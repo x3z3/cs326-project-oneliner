@@ -206,8 +206,27 @@ function renderLogin(element) {
 
 }
 
+function renderStoreButton(element) {
+    element.innerHTML = '';
+    const storeBtn = document.createElement('button');
+    storeBtn.classList.add('std-rounded-btn');
+    storeBtn.innerHTML = 'Store';
+    storeBtn.id = 'store-btn';
+    element.appendChild(storeBtn);
+}
+
+function renderHistButton(element) {
+    element.innerHTML = '';
+    const histBtn = document.createElement('button');
+    histBtn.classList.add('std-rounded-btn');
+    histBtn.innerHTML = 'History';
+    histBtn.id = 'hist-btn';
+    element.appendChild(histBtn);
+}
+
+
 function clearElement(element) {
     element.innerHTML = '';
 }
 
-export { renderClock, renderSpotify, renderQuote, renderWeather, clearElement, renderLogin };
+export { renderClock, renderSpotify, renderQuote, renderWeather, clearElement, renderLogin, renderStoreButton, renderHistButton };

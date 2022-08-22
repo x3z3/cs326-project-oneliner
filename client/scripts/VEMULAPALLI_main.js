@@ -1,4 +1,4 @@
-import { renderClock, renderSpotify, renderLogin, renderQuote, renderWeather } from "./VEMULAPALLI_render.js";
+import { renderClock, renderSpotify, renderHistButton, renderStoreButton, renderLogin, renderQuote, renderWeather } from "./VEMULAPALLI_render.js";
 import { getDate } from "./date.js";
 import { getQuote, getWeather } from "./fetches.js"
 import { theme } from "./themes.js"
@@ -10,8 +10,8 @@ const interactiveContainer = document.getElementById('interactive-container');
 const quoteContainer = document.getElementById('quote-container');
 const weatherContainer = document.getElementById('weather-container');
 const themeButton = document.getElementById('theme-button');
-const storeBtn = document.getElementById('store-button');
-const histBtn = document.getElementById('hist-button');
+const storeBtn = document.getElementById('block-btn1');
+const histBtn = document.getElementById('block-btn2');
 const registerBtn = document.getElementById('register-btn');
 
 let clock24Hour = true;
@@ -23,15 +23,25 @@ async function renderLoginPage() {
     const loginBtn = document.getElementById('login-btn');
     const registerBtn = document.getElementById('register-btn');
     loginBtn.addEventListener('click', async () => {
-        renderSpotify(interactiveContainer, null);
+        await renderUnlockedPage();
     });
     registerBtn.addEventListener('click', async () => {
-        renderSpotify(interactiveContainer, null);
+        await renderUnlockedPage();
     });
     renderQuote(quoteContainer, await getQuote());
     renderWeather(weatherContainer, await getWeather(), f_c);
     startClock();
     startFetchTimers();
+}
+
+async function renderUnlockedPage() {
+    // renderClock(clockContainer, getDate(), clock24Hour);
+    renderSpotify(interactiveContainer, null);
+    // renderQuote(quoteContainer, await getQuote());
+    // renderWeather(weatherContainer, await getWeather(), f_c);
+    renderHistButton(histBtn);
+    renderStoreButton(storeBtn);
+    
 }
 
 function startClock() {
