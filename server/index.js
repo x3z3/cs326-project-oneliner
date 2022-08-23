@@ -12,8 +12,6 @@ import { weather } from './weather.js';
 import * as crud from './crud.js';
 
 import { MongoClient } from 'mongodb';
-const URI = process.env.CONNECTION_URI;
-const client = new MongoClient(URI, { useUnifiedTopology: true });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(dirname(__filename));
@@ -74,6 +72,7 @@ app.post('/register', async(req, res) => {
 
 // Felicia
 app.post('/notes/save', async function(req, res) {
+  const client = new MongoClient(process.env.CONNECTION_URI, { useUnifiedTopology: true });
   try {
     await client.connect();
     const collection = await client.db('onelinerDB').collection('notes');
@@ -88,6 +87,7 @@ app.post('/notes/save', async function(req, res) {
 });
 
 app.post('/notes/delete', async function(req, res) {
+  const client = new MongoClient(process.env.CONNECTION_URI, { useUnifiedTopology: true });
   try {
     await client.connect();
     const collection = await client.db('onelinerDB').collection('notes');
@@ -104,6 +104,7 @@ app.post('/notes/delete', async function(req, res) {
 
 
 app.post('/tasks/save', async function(req, res) {
+  const client = new MongoClient(process.env.CONNECTION_URI, { useUnifiedTopology: true });
   try {
     await client.connect();
     const collection = await client.db('onelinerDB').collection('tasks');
@@ -118,6 +119,7 @@ app.post('/tasks/save', async function(req, res) {
 });
 
 app.post('/tasks/delete', async function(req, res) {
+  const client = new MongoClient(process.env.CONNECTION_URI, { useUnifiedTopology: true });
   try {
     await client.connect();
     const collection = await client.db('onelinerDB').collection('tasks');
