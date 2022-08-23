@@ -13,6 +13,8 @@ const themeButton = document.getElementById('theme-button');
 const storeBtn = document.getElementById('block-btn1');
 const histBtn = document.getElementById('block-btn2');
 
+let userName = '';
+
 let clock24Hour = true;
 let f_c = true;
 
@@ -26,6 +28,7 @@ async function renderLoginPage() {
         const passInput = document.getElementById('pass-input');
         const resp = await postLogin(userInput.value, passInput.value);
         if (resp.status === 'success') {
+            userName = userInput.value;
             await renderUnlockedPage();
         } else {
             alert('Invalid credentials');
@@ -37,6 +40,7 @@ async function renderLoginPage() {
         const passInput = document.getElementById('pass-input');
         const resp = await postRegister(userInput.value, passInput.value);
         if (resp.status === 'success') {
+            userName = userInput.value;
             await renderUnlockedPage();
         } else {
             alert('User already exists');
