@@ -1,5 +1,3 @@
-const url = 'http://localhost:3000';
-
 // Returns a quote object
 // { 
 //  q: 'a quote',
@@ -8,7 +6,7 @@ const url = 'http://localhost:3000';
 // }
 async function getQuote() {
     const route = '/quote';
-    const response = await fetch(url+route);
+    const response = await fetch(route);
     const body = await response.json();
     return body;
 }
@@ -24,14 +22,14 @@ async function getQuote() {
 //  this.weather = {temp : NaN, unit : null, isDayTime : null, icon : '../resources/sad.png', endTime : null }
 async function getWeather() {
     const route = '/weather';
-    const response = await fetch(url+route);
+    const response = await fetch(route);
     const body = await response.json();
     return body;
 }
 
 async function postLogin(username, password) {
     const route = '/login';
-    const response = await fetch(url+route, {
+    const response = await fetch(route, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -47,7 +45,7 @@ async function postLogin(username, password) {
 
 async function postRegister(username, password) {
     const route = '/register';
-    const response = await fetch(url+route, {
+    const response = await fetch(route, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -63,7 +61,7 @@ async function postRegister(username, password) {
 
 async function saveNotes(notes, username) {
     const route = '/notes/save';
-    const response = await fetch(url+route, {
+    const response = await fetch(route, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -79,7 +77,7 @@ async function saveNotes(notes, username) {
 
 async function getNotes(username) {
     const route = '/notes/fetch';
-    const response = await fetch(url+route, {
+    const response = await fetch(route, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -95,7 +93,7 @@ async function getNotes(username) {
 async function saveTasks(tasks, username) {
     console.log(tasks);
     const route = '/tasks/save';
-    const response = await fetch(url+route, {
+    const response = await fetch(route, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -111,7 +109,7 @@ async function saveTasks(tasks, username) {
 
 async function getTasks(username) {
     const route = '/tasks/fetch';
-    const response = await fetch(url+route, {
+    const response = await fetch(route, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

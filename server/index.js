@@ -73,6 +73,8 @@ app.post('/register', async(req, res) => {
 
 // Felicia
 app.post('/notes/save', async function(req, res) {
+  // Protected route
+  // app.post('/notes/save', checkLoggedIn, async function(req, res) {
   await client.connect().catch(e => console.log(e));
   try {
     await client.connect();
@@ -89,6 +91,8 @@ app.post('/notes/save', async function(req, res) {
 
 // Felicia
 app.post('/notes/delete', async function(req, res) {
+  // Protected route
+  // app.post('/notes/delete', checkLoggedIn, async function(req, res) {
   await client.connect().catch(e => console.log(e));
   try {
     await client.connect();
@@ -105,6 +109,8 @@ app.post('/notes/delete', async function(req, res) {
 
 // Anshul
 app.post('/notes/fetch', async function(req, res) {
+  // Protected route
+  // app.post('/notes/fetch', checkLoggedIn, async function(req, res) {
   await client.connect().catch(e => console.log(e));
   try {
     await client.connect();
@@ -121,6 +127,8 @@ app.post('/notes/fetch', async function(req, res) {
 
 // Felicia
 app.post('/tasks/save', async function(req, res) {
+  // Protected route
+  // app.post('/tasks/save', checkLoggedIn async function(req, res) {
   await client.connect().catch(e => console.log(e));
   try {
     await client.connect();
@@ -137,6 +145,8 @@ app.post('/tasks/save', async function(req, res) {
 
 // Felicia
 app.post('/tasks/delete', async function(req, res) {
+  // Protected route
+  // app.post('/tasks/delete', checkLoggedIn, async function(req, res) {
   await client.connect().catch(e => console.log(e));
   try {
     await client.connect();
@@ -153,6 +163,8 @@ app.post('/tasks/delete', async function(req, res) {
 
 // Anshul
 app.post('/tasks/fetch', async function(req, res) {
+  // Protected route
+  // app.post('/tasks/fetch', checkLoggedIn, async function(req, res) {
   await client.connect().catch(e => console.log(e));
   try {
     await client.connect();
