@@ -1,6 +1,8 @@
 import * as crud from './crud.js';
 
 const clock = new Date();
+const timeContainer = document.getElementById('time-container');
+const dateContainer = document.getElementById('date-container');
 const notesTextBox = document.getElementById('notes-textbox');
 const saveNotesButton = document.getElementById('save-notes-button');
 const tasksTextBox = document.getElementById('tasks-textbox');
@@ -36,9 +38,11 @@ function renderDate(element) {
   element.appendChild(display);
 }
 
-function renderWeather(element) {
-
+function startClock() {
+  setInterval(() => renderTime(timeContainer), 1000);
+  setInterval(() => renderDate(dateContainer), 10000);
 }
 
-renderTime(document.getElementById('time-container'));
-renderDate(document.getElementById('date-container'));
+renderTime(timeContainer);
+renderDate(dateContainer);
+startClock();
