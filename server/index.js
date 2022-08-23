@@ -3,7 +3,6 @@ import express from 'express';
 import logger from 'morgan';
 import expressSession from 'express-session';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
 import users from './users.js';
 import auth from './auth.js';
@@ -16,10 +15,8 @@ import { MongoClient } from 'mongodb';
 const client = new MongoClient(process.env.CONNECTION_URI, { useUnifiedTopology: true });
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(dirname(__filename));
 
 const sessionConfig = {
-    // set this encryption key in Heroku config (never in GitHub)!
     secret: process.env.SECRET || 'SECRET',
     resave: false,
     saveUninitialized: false,
@@ -41,7 +38,7 @@ function checkLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         next();
     } else {
-        res.status(401).send({status: 'failure'});
+        res.redirect('/')
     }
 }
 
