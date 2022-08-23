@@ -61,4 +61,67 @@ async function postRegister(username, password) {
     return body;
 }
 
-export { getQuote, getWeather, postLogin, postRegister };
+async function saveNotes(notes, username) {
+    const route = '/notes/save';
+    const response = await fetch(url+route, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: username,
+            content: notes
+        })
+    });
+    const body = await response.json();
+    return body;
+}
+
+async function getNotes(username) {
+    const route = '/notes/fetch';
+    const response = await fetch(url+route, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: username
+        })
+    });
+    const body = await response.json();
+    return body.content;
+}
+
+async function saveTasks(tasks, username) {
+    console.log(tasks);
+    const route = '/tasks/save';
+    const response = await fetch(url+route, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: username,
+            content: tasks
+        })
+    });
+    const body = await response.json();
+    return body;
+}
+
+async function getTasks(username) {
+    const route = '/tasks/fetch';
+    const response = await fetch(url+route, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: username
+        })
+    });
+    const body = await response.json();
+    return body.content;
+}
+
+export { getQuote, getWeather, postLogin, postRegister, saveNotes, getNotes, saveTasks, getTasks };
