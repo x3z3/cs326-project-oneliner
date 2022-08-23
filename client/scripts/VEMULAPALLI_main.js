@@ -1,6 +1,6 @@
 import { renderClock, renderSpotify, renderHistButton, renderStoreButton, renderLogin, renderQuote, renderWeather } from "./VEMULAPALLI_render.js";
 import { getDate } from "./date.js";
-import { getQuote, getWeather, postLogin, postRegister } from "./fetches.js"
+import { getQuote, getWeather, postLogin, postRegister, saveNotes, getNotes, saveTasks, getTasks } from "./fetches.js"
 import { theme } from "./themes.js"
 
 const root = document.querySelector(':root');
@@ -55,8 +55,20 @@ async function renderLoginPage() {
 
 async function renderUnlockedPage() {
     renderSpotify(interactiveContainer, null);
-    renderHistButton(histBtn);
-    renderStoreButton(storeBtn);
+    await renderHistButton(histBtn);
+    await renderStoreButton(storeBtn);
+    storeBtn.addEventListener('click', async () => {
+        const notes = document.getElementById('notes-box').value;
+        const tasks = document.getElementById('tasks-box').value;
+        await saveNotes(notes, userName);
+        await saveTasks(tasks, userName);
+    });
+    histBtn.addEventListener('click', async () => {
+        const notes = document.getElementById('notes-box');
+        const tasks = document.getElementById('tasks-box');
+        notes.value = await getNotes(userName);
+        tasks.value = await getTasks(userName);
+    });
 }
 
 function startClock() {

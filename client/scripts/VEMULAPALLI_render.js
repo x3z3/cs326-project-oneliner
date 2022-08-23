@@ -161,13 +161,6 @@ function renderWeather(element, weather, f_c) {
 function renderLogin(element) {
     element.innerHTML = '';
 
-    // const form = document.createElement('form');
-    // form.classList.add('login-form');
-    // form.action = '/login';
-    // form.method = 'post';
-    // element.appendChild(form);
-
-
     const loginContainer = document.createElement('div');
     loginContainer.classList.add('login-container');
     element.appendChild(loginContainer);
@@ -204,7 +197,6 @@ function renderLogin(element) {
     loginContainer.appendChild(loginBtns);
 
     const loginBtn = document.createElement('button');
-    // loginBtn.type = 'submit';
     loginBtn.classList.add('login-btn');
     loginBtn.innerHTML = 'Login';
     loginBtn.id = 'login-btn';
@@ -212,7 +204,6 @@ function renderLogin(element) {
     loginBtns.appendChild(loginBtn);
 
     const registerBtn = document.createElement('button');
-    // registerBtn.type = 'submit';
     registerBtn.classList.add('login-btn');
     registerBtn.innerHTML = 'Register';
     registerBtn.id = 'register-btn';
@@ -221,7 +212,7 @@ function renderLogin(element) {
 
 }
 
-function renderStoreButton(element) {
+async function renderStoreButton(element) {
     element.innerHTML = '';
     const storeBtn = document.createElement('button');
     storeBtn.classList.add('std-rounded-btn');
@@ -230,7 +221,7 @@ function renderStoreButton(element) {
     element.appendChild(storeBtn);
 }
 
-function renderHistButton(element) {
+async function renderHistButton(element) {
     element.innerHTML = '';
     const histBtn = document.createElement('button');
     histBtn.classList.add('std-rounded-btn');
