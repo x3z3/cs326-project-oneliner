@@ -11,6 +11,10 @@ import { quote } from './quote.js'
 import { weather } from './weather.js';
 import * as crud from './crud.js';
 
+import { MongoClient } from 'mongodb';
+const URI = process.env.CONNECTION_URI;
+const client = new MongoClient(URI, { useUnifiedTopology: true });
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(dirname(__filename));
 
